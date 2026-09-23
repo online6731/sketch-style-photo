@@ -1,4 +1,10 @@
-Save the sample sketch photo you sent (ballpoint + green/blue highlighter notebook style) here as style-reference.jpg
-for versioning, then users can upload it as the "style image" for best results.
+style-reference.jpg right now is an auto-generated PLACEHOLDER that mimics the
+style zones (spiral holes on top, green highlighter bands, blue marker bands,
+pen scribble) — it is NOT the original photo from the chat.
 
-این عکس نمونه (اسکچ دفترچه‌ای) را با همین نام اینجا ذخیره کن: style-reference.jpg
+To get the best AI result, replace it with the real sample sketch photo:
+  1. Save the sketch photo you sent (ballpoint + green/blue markers) as
+     assets/style-reference.jpg (overwrite this file).
+  2. git add, commit and push.
+
+تا وقتی عکس اصلی را جایگزین نکرده‌ای، همین فایل موقت به‌عنوان رفرنس استایل استفاده می‌شود.
