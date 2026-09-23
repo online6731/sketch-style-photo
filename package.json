@@ -1,0 +1,20 @@
+{
+  "name": "sketch-style-photo",
+  "version": "1.0.0",
+  "description": "Convert user photo into hand-drawn notebook sketch style (ballpoint + highlighter) via AI API. Bilingual FA/EN.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "formidable": "^3.5.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

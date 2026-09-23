@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sketch Style Photo | تبدیل عکس به اسکچ دفترچه‌ای</title>
+  <meta name="description" content="Upload a photo and convert it into ballpoint + highlighter notebook sketch style via AI. | عکس را به استایل طراحی دفترچه‌ای تبدیل کنید." />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">✏️ <span data-i18n="brand">Sketch Style Photo</span></div>
+    <div class="lang-switch">
+      <button id="btn-fa" class="active">فارسی</button>
+      <button id="btn-en">EN</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 data-i18n="title">عکست رو به اسکچ دفترچه‌ای تبدیل کن</h1>
+      <p data-i18n="subtitle">عکس خودت رو بده + عکس استایل (همون طراحی با خودکار و ماژیک سبز/آبی) — خروجی با هوش مصنوعی ساخته می‌شه.</p>
+      <ol class="steps">
+        <li data-i18n="s1">۱. عکس پرتره‌ات را آپلود کن</li>
+        <li data-i18n="s2">۲. عکس استایل را بده (اختیاری — پیش‌فرض همون اسکچ نمونه است)</li>
+        <li data-i18n="s3">۳. دکمه تبدیل را بزن و دانلود کن</li>
+      </ol>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2 data-i18n="uploadTitle">آپلود</h2>
+
+        <label class="field">
+          <span data-i18n="photoLabel">📷 عکس کاربر *</span>
+          <input type="file" id="photo" accept="image/*" />
+          <img id="photo-preview" class="preview" alt="" hidden />
+        </label>
+
+        <label class="field">
+          <span data-i18n="styleLabel">🎨 عکس استایل (اختیاری)</span>
+          <input type="file" id="style" accept="image/*" />
+          <img id="style-preview" class="preview" alt="" hidden />
+          <small data-i18n="styleHint">اگه چیزی ندی، از توضیح متنی استایل نمونه (خودکار + هایلایتر سبز/آبی + کاغذ دفترچه فنری) استفاده می‌شه. برای دقت بیشتر همون عکسی که فرستادی رو اینجا آپلود کن و ذخیره‌ش کن در assets/style-reference.jpg</small>
+        </label>
+
+        <label class="field">
+          <span data-i18n="intensity">میزان اسکچی شدن</span>
+          <select id="intensity">
+            <option value="low" data-i18n="low">کم — نزدیک به عکس</option>
+            <option value="medium" selected data-i18n="med">متوسط — متعادل</option>
+            <option value="high" data-i18n="high">زیاد — خیلی دستی و شلخته</option>
+          </select>
+        </label>
+
+        <button id="convert" class="primary" data-i18n="convert">✨ تبدیل کن</button>
+        <p id="status" class="status"></p>
+      </div>
+
+      <div class="card">
+        <h2 data-i18n="resultTitle">نتیجه</h2>
+        <div id="result-empty" class="empty" data-i18n="empty">هنوز چیزی ساخته نشده — یه عکس بده و تبدیل رو بزن.</div>
+        <img id="result" class="result" alt="result" hidden />
+        <div class="row">
+          <a id="download" class="ghost" download="sketch.png" hidden data-i18n="download">⬇ دانلود PNG</a>
+          <button id="open-full" class="ghost" hidden data-i18n="openFull">باز کردن در تب جدید</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="card note">
+      <h3 data-i18n="keyTitle">🔑 درباره API Key</h3>
+      <p data-i18n="keyText">کلید OpenAI فقط روی سرور می‌مونه (server.js یا Vercel Env). هیچ‌وقت کلید رو داخل کد فرانت‌اند نذار. برای اجرای محلی: فایل .env بساز و OPENAI_API_KEY رو بذار، بعد npm install و npm start.</p>
+      <code>OPENAI_API_KEY=sk-... npm install; if ($?) { npm start }</code>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span data-i18n="foot">ساخته‌شده برای استایل اسکچ دفترچه‌ای ✏️💚💙</span>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
